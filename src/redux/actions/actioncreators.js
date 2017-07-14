@@ -149,7 +149,7 @@ export function createUser(user){
 			body: JSON.stringify(user)
 		})
 		.then(response => response.json())
-		.then(data => dispatch(logueado(data)));
+		.then(data => dispatch(registrado(data)));
 	};
 }
 //////////

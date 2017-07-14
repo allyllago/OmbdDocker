@@ -20,7 +20,7 @@ router.get('/', function (req, res) {
 });
 
 //SIGNUP
-router.post('/signup', function (req, res) {
+router.post('/signup', function (req, res, next) {
 	var newUser = new user({ username: req.body.username, email: req.body.email });
 	user.register(newUser, req.body.password, function (err, user) {
 		if (err) {
@@ -28,8 +28,6 @@ router.post('/signup', function (req, res) {
 		}
 		res.send({
 			err: null,
-			user: req.user.username,
-			favorites: req.user.favorites,
 			success: true
 		});
 	});

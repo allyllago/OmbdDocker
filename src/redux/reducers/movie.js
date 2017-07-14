@@ -1,4 +1,4 @@
-import {GET_MOVIE, FAILED_TO_FETCH, RECEIVE_MOVIE, GET_MOVIES, RECEIVE_MOVIES, LOGIN, LOGUEADO, LOGOUT, DESLOGUEADO, FAILED_TO_LOGIN, GET_FAVORITES, RECEIVE_FAVORITES} from '../actions/actioncreators.js';
+import {GET_MOVIE, FAILED_TO_FETCH, RECEIVE_MOVIE, GET_MOVIES, RECEIVE_MOVIES, LOGIN, LOGUEADO, LOGOUT, DESLOGUEADO, FAILED_TO_LOGIN, GET_FAVORITES, RECEIVE_FAVORITES, REGISTRADO} from '../actions/actioncreators.js';
 
 export function user(state={
 	isFetching:false,
@@ -40,6 +40,11 @@ export function user(state={
 	case RECEIVE_FAVORITES:
 		return Object.assign({}, state, {
 			isFetching: false,
+		})
+	case REGISTRADO:
+		return Object.assign({}, state,{
+			isFetching: false,
+			isLoggedIn: false
 		})
 	default:
 		return state;
