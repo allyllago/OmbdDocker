@@ -26,7 +26,12 @@ router.post('/signup', function (req, res) {
 		if (err) {
 			return res.send({error:"hubo un error durante el registro"});
 		}
-		res.send({"Se creó el usuario":user.username});
+		res.send({
+			err: null,
+			user: req.user.username,
+			favorites: req.user.favorites,
+			success: true
+		});
 	});
 });
 
